@@ -51,7 +51,7 @@ class OnePassCluster:
         self.cluster_list.append(ClusterUnit())  # 初始新建一个簇
         self.cluster_list[0].add_node(0, self.vectors[0])  # 将读入的第一个节点归于该簇
         for index in range(len(self.vectors))[1:]:
-            min_distance = euclidian_distance(vec_a=self.vectors[0],
+            min_distance = euclidian_distance(vec_a=self.vectors[index],
                                               vec_b=self.cluster_list[0].centroid)  # 与簇的质心的最小距离
             min_cluster_index = 0  # 最小距离的簇的索引
             for cluster_index, cluster in enumerate(self.cluster_list[1:]):
